@@ -7,7 +7,7 @@ parser = argparse.ArgumentParser(description="profile")
 parser.add_argument("--name", "-n", type=str, default="None", help="pc_name")
 parser.add_argument("--directory", "-d", type=str, default="None", help="output file directory")
 args = parser.parse_args()
-print(args.name)
+print(args.name, args.directory)
 
 with open(args.directory + "{0}.csv".format(args.name), "a") as f:
     csv_writer = csv.writer(f)
