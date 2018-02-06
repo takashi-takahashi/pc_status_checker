@@ -23,7 +23,7 @@ for calculator_name in calculator_name_list:
         data_dictionary[calculator_name] = []
         for index, line in enumerate(csv_reader):
             data_dictionary[calculator_name].append(line)
-        data_dictionary[calculator_name] = data_dictionary[calculator_name][-24:]
+        data_dictionary[calculator_name] = data_dictionary[calculator_name][-30:]
 
 # plot data
 fig = plt.figure()
