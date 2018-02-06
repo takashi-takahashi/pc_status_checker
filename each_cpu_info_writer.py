@@ -13,8 +13,8 @@ with open(args.directory + "{0}.csv".format(args.name), "a") as f:
     csv_writer = csv.writer(f)
     now_string = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     line = [datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            psutil.cpu_percent(interval=0.5),
+            psutil.cpu_percent(interval=1),
             psutil.virtual_memory().percent
             ]
     csv_writer.writerow(line)
-    print(now_string, psutil.cpu_percent(interval=0.5), psutil.virtual_memory().percent)
+    print(now_string, psutil.cpu_percent(interval=1), psutil.virtual_memory().percent)
