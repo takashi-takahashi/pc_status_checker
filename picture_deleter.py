@@ -10,7 +10,8 @@ files_list_url = 'https://slack.com/api/files.list'
 delete_url = 'https://slack.com/api/files.delete'
 ts_from = str(calendar.timegm((datetime.now() + timedelta(days=-365)).utctimetuple()))
 ts_to = str(calendar.timegm((datetime.now() + timedelta(days=-1)).utctimetuple()))
-data_list = {'token': access_token, 'channels': channel_id, "ts_to": ts_to}
+count = 20
+data_list = {'token': access_token, 'channels': channel_id, "ts_to": ts_to, 'ts_from': ts_from, 'count': count}
 
 counter = 0
 while True:
@@ -36,4 +37,5 @@ while True:
                     print("delete request failed")
                     print(delete_request_response.json())
                     print()
+    print("sleeping...")
     time.sleep(5)
